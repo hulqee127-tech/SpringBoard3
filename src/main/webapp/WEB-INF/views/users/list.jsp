@@ -42,10 +42,10 @@
 				<td>PassWD</td>
 				<td>UserNAME</td>
 				<td>Email</td>
-				<td>Upoint</td>
-				<td>InDATE</td>
-				<td>Delete</td>
-				<td>Modify</td>
+				<td>얼마있냐?</td>
+				<td>가입일자</td>
+				<td>지워?</td>
+				<td>고쳐?</td>
 			</tr>
 			<tr>
 				<td colspan="8">
@@ -60,12 +60,13 @@
 				<td>${ user.email  }</td>
 				<td>${ user.upoint  }</td>
 				<td>${ user.indate  }</td>
-				<td><a href="/Users/Delete?userid=${ user.userid   }" onclick="return confirm('삭제하시겠습니까? 삭제 후 되돌릴 수 없습니다.');">Delete</a></td>
+				<td><a href="/Users/Delete?userid=${ user.userid   }" onclick="return confirm('삭제하시겠습니까? \n 삭제 후 되돌릴 수 없습니다.');">Delete</a></td>
 				<!-- <td><a href="/Users/UpdateForm?userid=${ user.userid   }">Modify</a></td> -->
 				<td><a href="/Users/UpdateForm?userid=${ user.userid   }">Modify</a>
 			</tr>
 			</c:forEach>
 		</table>
+		
 	</main>
 </body>
 </html>

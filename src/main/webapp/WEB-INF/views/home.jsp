@@ -15,6 +15,8 @@
 		<hr />
 		<a href="/Menus/List">맨유목록</a><br />
 		<a href="/Menus/WriteForm">새맨유선수추가</a><br />
+		<hr />
+		<a href="/Users/List">사용자목록</a><br />
 	</main>
 </body>
 </html>

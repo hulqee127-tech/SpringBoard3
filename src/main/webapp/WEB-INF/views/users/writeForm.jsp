@@ -61,7 +61,7 @@
 <script>
 
 	function handleOnInput(e){
-		e.value = e.value.replace(/[^A-Za-z]/ig, '');
+		e.value = e.value.replace(/[^A-Za-z0-9]/ig, '');
 	}
 	
 	//const formEl = document.querySelectorAll("form")[0];//form이 2개 이상일 경우 가장 첫번째 form 가져오기
