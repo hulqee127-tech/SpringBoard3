@@ -60,10 +60,16 @@
 				<td>${ user.email  }</td>
 				<td>${ user.upoint  } (${ user.grade  })</td>
 				<td type="date">${ user.indate  }</td>
-				<td><a href="/Users/Delete?userid=${ user.userid   }" onclick="return confirm('삭제하시겠습니까? \n 삭제 후 되돌릴 수 없습니다.');">Delete</a></td>
-				<!-- <td><a href="/Users/UpdateForm?userid=${ user.userid   }">Modify</a></td> -->
-				<td><a href="/Users/UpdateForm?userid=${ user.userid   }">Modify</a>
-				</td>
+				<c:choose>  <%-- if, else의 시작임을 정의 --%>
+					<c:when test="${'127' == user.userid}"> <%-- if와 동일 --%>
+						<td><a href="/Users/Delete?userid=${ user.userid   }" onclick="return confirm('삭제하시겠습니까? \n 삭제 후 되돌릴 수 없습니다.');">Delete</a></td>
+						<%-- <td><a href="/Users/UpdateForm?userid=${ user.userid   }">Modify</a></td> --%>
+						<td><a href="/Users/UpdateForm?userid=${ user.userid   }">Modify</a></td>
+					</c:when> 	<%-- if 종료 --%>
+					<c:otherwise> <%-- else와 동일 --%>
+						<td></td><td></td>
+					</c:otherwise> <%-- else 종료 --%>
+				</c:choose>  <%-- if, else의 종료임을 정의--%>
 			</tr>
 			</c:forEach>
 		</table>
