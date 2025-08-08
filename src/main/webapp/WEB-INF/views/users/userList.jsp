@@ -39,7 +39,7 @@
 		<table>
 			<tr>
 				<td>UserID</td>
-				<td>PassWD</td>
+				<!-- <td>PassWD</td> -->
 				<td>UserNAME</td>
 				<td>Email</td>
 				<td>POINT</td>
@@ -55,14 +55,15 @@
 			<c:forEach var="user" items="${userList}">		<!-- JSTL 문법 -->
 			<tr>
 				<td>${ user.userid   }</td>	<!-- Expression Langauge => EL el문법 -->
-				<td>${ user.passwd }</td>
+				<%-- <td>${ user.passwd }</td> --%>
 				<td>${ user.username  }</td>
 				<td>${ user.email  }</td>
-				<td>${ user.upoint  }</td>
-				<td>${ user.indate  }</td>
+				<td>${ user.upoint  } (${ user.grade  })</td>
+				<td type="date">${ user.indate  }</td>
 				<td><a href="/Users/Delete?userid=${ user.userid   }" onclick="return confirm('삭제하시겠습니까? \n 삭제 후 되돌릴 수 없습니다.');">Delete</a></td>
 				<!-- <td><a href="/Users/UpdateForm?userid=${ user.userid   }">Modify</a></td> -->
 				<td><a href="/Users/UpdateForm?userid=${ user.userid   }">Modify</a>
+				</td>
 			</tr>
 			</c:forEach>
 		</table>

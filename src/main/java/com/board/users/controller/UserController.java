@@ -2,6 +2,7 @@ package com.board.users.controller;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +22,7 @@ public class UserController {
 	public String list(Model model) {
 		
 		List<UserDTO> userList = userMapper.getUserList();
-		System.out.println(userList);
+		//System.out.println(userList);
 
 		model.addAttribute("userList", userList);
 		
@@ -47,7 +48,7 @@ public class UserController {
 	@RequestMapping("/Users/Delete")
 	public String delete(UserDTO userDto) {
 		userMapper.deleteUser(userDto);
-		System.out.println(userDto);
+		//System.out.println(userDto);
 		return "redirect:/Users/userList";
 	}
 	
@@ -55,7 +56,7 @@ public class UserController {
 	public String updateForm(UserDTO userDto, Model model) {
 		// 넘어온 정보를 이용하여 수정할 정보를 조회
 		UserDTO updateData = userMapper.getUpdateData(userDto);
-		System.out.println(updateData);
+		//System.out.println(updateData);
 		// 조회한 정보를 updateForm.jsp 로 넘긴다.
 		model.addAttribute("updateData", updateData);
 		// users/updateForm.jsp 로 가랏~!
@@ -68,6 +69,13 @@ public class UserController {
 		userMapper.updateUser(userDto);
 		return "redirect:/Users/userList";
 		//return "";
+	}
+	
+	@RequestMapping("/Users/LogIn")
+	public String login_chk(@Param("uid")String uid, @Param("pwd") String pwd) {
+		//List<list> li = userMapper.login_chk(uid, pwd);
+		//System.out.println(li);
+		return"";
 	}
 	
 }

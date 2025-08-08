@@ -6,61 +6,87 @@ public class UserDTO {
 	private int    passwd;
 	private String username;
 	private String email;
-	private int upoint;
+	private String upoint;
+	private String grade;
 	private String indate;
+	
 	
 	public String getUserid() {
 		return userid;
 	}
+
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
+
 	public int getPasswd() {
 		return passwd;
 	}
+
 	public void setPasswd(int passwd) {
 		this.passwd = passwd;
 	}
+
 	public String getUsername() {
 		return username;
 	}
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getUpoint() {
+
+	public String getUpoint() {
 		return upoint;
 	}
-	public void setUpoint(int upoint) {
+
+	public void setUpoint(String upoint) {
 		this.upoint = upoint;
 	}
+
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
 	public String getIndate() {
 		return indate;
 	}
+
 	public void setIndate(String indate) {
 		this.indate = indate;
 	}
+
 	public UserDTO() {}
 	
-	public UserDTO(String userid, int passwd, String username, String email, int upoint, String indate) {
+	
+	
+	public UserDTO(String userid, int passwd, String username, String email, String upoint, String grade, String indate) {
 		this.userid = userid;
 		this.passwd = passwd;
 		this.username = username;
 		this.email = email;
 		this.upoint = upoint;
+		this.grade = grade;
 		this.indate = indate;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "UserDTO [userid=" + userid + ", passwd=" + passwd + ", username=" + username + ", email=" + email
-				+ ", upoint=" + upoint + ", indate=" + indate + "]";
+				+ ", upoint=" + upoint + ", grade=" + grade + ", indate=" + indate + "]";
 	}
+
 	
 	
 	

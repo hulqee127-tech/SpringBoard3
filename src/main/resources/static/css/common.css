@@ -17,6 +17,7 @@ a:hover{
 table, th, td {
 	border: 1px solid gray;
 	border-collapse : collapse;
+	white-space:nowrap;
 }
 
 table {
@@ -32,4 +33,9 @@ main{
 
 h2{
 	margin:20px;
+}
+
+#table1 , th , td {
+	border:1;
+	width:45%;
 }

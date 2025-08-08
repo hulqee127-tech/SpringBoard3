@@ -3,6 +3,7 @@ package com.board.users.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.board.users.domain.UserDTO;
 
@@ -21,5 +22,8 @@ public interface UserMapper {
 	UserDTO getUpdateData(UserDTO userDto);
 
 	void updateUser(UserDTO userDto);
+
+	void login_chk(@Param("uid") String uid,@Param("pwd") String pwd);
+	
 	
 }

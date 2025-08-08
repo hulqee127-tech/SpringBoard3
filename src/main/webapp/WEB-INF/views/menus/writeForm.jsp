@@ -80,6 +80,13 @@
 			e.stopPropagation();
 			e.preventDefault();
 			//return false
+		}else{
+			if(confirm('입력하시겠습니까?')){
+				alert('입력되었습니다.');
+			}else{
+				e.stopPropagation();	// 이벤트 버블링 방지
+				e.preventDefault();		// 이벤트 취소
+			}
 		}
 	})
 </script>
