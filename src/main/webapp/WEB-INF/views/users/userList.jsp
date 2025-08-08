@@ -35,17 +35,17 @@
 </head>
 <body bgcolor="black" style = "color:white">
 	<main>
-		<h2>사용자목록</h2>
+		<h2>사용자목록&nbsp;&nbsp;||&nbsp;&nbsp;<a href="http://localhost:9090/">홈</a></h2>
 		<table>
 			<tr>
 				<td>UserID</td>
 				<td>PassWD</td>
 				<td>UserNAME</td>
 				<td>Email</td>
-				<td>얼마있냐?</td>
+				<td>POINT</td>
 				<td>가입일자</td>
-				<td>지워?</td>
-				<td>고쳐?</td>
+				<td>삭제</td>
+				<td>수정</td>
 			</tr>
 			<tr>
 				<td colspan="8">

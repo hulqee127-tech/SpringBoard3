@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>맨유선수수정</title>
+<title>메뉴수정</title>
 <link rel="icon" type="image/jpg" href="/img/saitama.jpg" />
 <link rel="stylesheet" href="/css/common.css" />
 <style>
@@ -32,19 +32,19 @@
 </head>
 <body bgcolor="black" style = "color:white">
 	<main>
-		<h2>새맨유선수수정</h2>
+		<h2>메뉴수정&nbsp;&nbsp;||&nbsp;&nbsp;<a href="http://localhost:9090/">홈</a></h2>
 		<form action="/Menus/Update" method="POST">
 			<table>
 				<tr>
-					<td>맨유 아이디</td>
+					<td>메뉴 아이디</td>
 					<td><input type="text" name="menu_id" value="${updateData.menu_id}" readonly /></td>
 				</tr>
 				<tr>
-					<td>맨유 이름</td>
+					<td>메뉴 이름</td>
 					<td><input type="text" name="menu_name" value="${updateData.menu_name}" /></td>
 				</tr>
 				<tr>
-					<td>맨유 순서</td>
+					<td>메뉴 순서</td>
 					<td><input type="number" name="menu_seq" value="${updateData.menu_seq}" /></td>
 				</tr>
 				<tr>
@@ -61,24 +61,26 @@
 		const inputEl1 = document.querySelector('[name="menu_id"]');
 		const inputEl2 = document.querySelector('[name="menu_name"]');
 		const inputEl3 = document.querySelector('[name="menu_seq"]');
-		if(inputEl1.value.trim() == ''){
-			alert('맨유아이디가 입력되지 않았다');
-			inputEl1.focus();
+
+		if(inputEl2.value.trim() == ''){
+			alert('메뉴이름이 입력되지 않았습니다.');
+			inputEl2.focus();
 			e.stopPropagation();	// 이벤트 버블링 방지
 			e.preventDefault();		// 이벤트 취소
 			//return false
-		}else if(inputEl2.value.trim() == ''){
-			alert('맨유이름이 입력되지 않았다');
-			inputEl2.focus();
-			e.stopPropagation();
-			e.preventDefault();
-			//return false
 		}else if(inputEl3.value.trim() == ''){
-			alert('맨유순서가 입력되지 않았다');
+			alert('메뉴순서가 입력되지 않았습니다.');
 			inputEl3.focus();
-			e.stopPropagation();
-			e.preventDefault();
+			e.stopPropagation();	// 이벤트 버블링 방지
+			e.preventDefault();		// 이벤트 취소
 			//return false
+		}else{
+			if(confirm('수정하시겠습니까?')){
+				alert('수정되었습니다.');
+			}else{
+				e.stopPropagation();	// 이벤트 버블링 방지
+				e.preventDefault();		// 이벤트 취소
+			}
 		}
 	})
 </script>

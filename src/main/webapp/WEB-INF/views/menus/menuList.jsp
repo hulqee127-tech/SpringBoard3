@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>맨유선수리스트</title>
+<title>메뉴리스트</title>
 <link rel="icon" type="image/jpg" href="/img/saitama.jpg" />
 <link rel="stylesheet" href="/css/common.css" />
 <!-- SCSS 문법을 가능하게 하는 라이브러리
@@ -35,7 +35,7 @@
 </head>
 <body bgcolor="black" style = "color:white">
 	<main>
-		<h2>맨유목록</h2>
+		<h2>메뉴목록&nbsp;&nbsp;||&nbsp;&nbsp;<a href="http://localhost:9090/">홈</a></h2>
 		<table>
 			<tr>
 				<td>Menu_ID</td>
@@ -46,7 +46,7 @@
 			</tr>
 			<tr>
 				<td colspan="5">
-					<a href="/Menus/WriteForm">새맨유선수추가</a>
+					<a href="/Menus/WriteForm">새메뉴추가</a>
 				</td>
 			</tr>
 			<% //for(int i=0; i<menuList.size();i++){ %>
@@ -57,7 +57,7 @@
 				<td>${ menu.menu_id   }</td>	<!-- Expression Langauge => EL el문법 -->
 				<td>${ menu.menu_name }</td>
 				<td>${ menu.menu_seq  }</td>
-				<td><a href="/Menus/Delete?menu_id=${ menu.menu_id   }">Delete</a></td>
+				<td><a href="/Menus/Delete?menu_id=${ menu.menu_id   }" onclick="return confirm('삭제하시겠습니까? \n 삭제 후 되돌릴 수 없습니다.');">Delete</a></td>
 				<td><a href="/Menus/UpdateForm?menu_id=${ menu.menu_id   }">Modify</a></td>
 			</tr>
 			</c:forEach>

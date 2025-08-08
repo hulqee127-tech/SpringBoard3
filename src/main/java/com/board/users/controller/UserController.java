@@ -17,7 +17,7 @@ public class UserController {
 	@Autowired
 	private UserMapper userMapper;
 	
-	@RequestMapping("/Users/List")
+	@RequestMapping("/Users/userList")
 	public String list(Model model) {
 		
 		List<UserDTO> userList = userMapper.getUserList();
@@ -25,7 +25,7 @@ public class UserController {
 
 		model.addAttribute("userList", userList);
 		
-		return "users/list";	//WEB-INF/views/menus/list.jsp
+		return "users/userList";	//WEB-INF/views/menus/list.jsp
 	}
 	
 	
@@ -41,14 +41,14 @@ public class UserController {
 		userMapper.insertUser(userDto);
 		
 		// 목록보기로 이동
-		return "redirect:/Users/List";
+		return "redirect:/Users/userList";
 	}
 	
 	@RequestMapping("/Users/Delete")
 	public String delete(UserDTO userDto) {
 		userMapper.deleteUser(userDto);
 		System.out.println(userDto);
-		return "redirect:/Users/List";
+		return "redirect:/Users/userList";
 	}
 	
 	@RequestMapping("/Users/UpdateForm")
@@ -66,7 +66,7 @@ public class UserController {
 	@RequestMapping("/Users/Update")
 	public String updateUser(UserDTO userDto, Model model) {
 		userMapper.updateUser(userDto);
-		return "redirect:/Users/List";
+		return "redirect:/Users/userList";
 		//return "";
 	}
 	

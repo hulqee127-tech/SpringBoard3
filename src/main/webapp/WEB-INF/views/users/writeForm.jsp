@@ -33,7 +33,7 @@
 </head>
 <body bgcolor="black" style = "color:white">
 	<main>
-		<h2>새사용자추가</h2>
+		<h2>새사용자추가&nbsp;&nbsp;||&nbsp;&nbsp;<a href="http://localhost:9090/">홈</a></h2>
 		<form action="/Users/Write" method="POST">
 			<table>
 				<tr>

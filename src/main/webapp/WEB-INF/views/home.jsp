@@ -7,16 +7,24 @@
 <title>홈</title>
 <link rel="icon" type="image/jpg" href="/img/saitama.jpg" />
 <link rel="stylesheet" href="/css/common.css" />
+<style>
+	hr {
+		height:5px;
+	}
+</style>
 </head>
 <body bgcolor="black" style = "color:white">
 	<main>
 		<h2>홈</h2>
-		<a href="/test" >Test</a>
+		<!-- <a href="/test" >인사말</a> -->
 		<hr />
-		<a href="/Menus/List">맨유목록</a><br />
-		<a href="/Menus/WriteForm">새맨유선수추가</a><br />
+		<a href="/Menus/menuList">메뉴목록</a>
+		&nbsp;&nbsp;&nbsp;||
+		<a href="/Menus/WriteForm">메뉴추가</a><br />
 		<hr />
-		<a href="/Users/List">사용자목록</a><br />
+		<a href="/Users/userList">사용자목록</a>
+		||
+		<a href="/Users/WriteForm">사용자추가</a>
 	</main>
 </body>
 </html>

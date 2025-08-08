@@ -32,7 +32,7 @@
 </head>
 <body bgcolor="black" style = "color:white">
 	<main>
-		<h2>사용자정보수정</h2>
+		<h2>사용자정보수정&nbsp;&nbsp;||&nbsp;&nbsp;<a href="http://localhost:9090/">홈</a></h2>
 		<form action="/Users/Update" method="POST">
 			<table>
 				<tr>

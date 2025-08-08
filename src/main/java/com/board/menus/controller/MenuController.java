@@ -17,7 +17,7 @@ public class MenuController {
 	@Autowired
 	private MenuMapper menuMapper;
 	
-	@RequestMapping("/Menus/List")
+	@RequestMapping("/Menus/menuList")
 	public String list(Model model) {
 		
 		List<MenuDTO> menuList = menuMapper.getMenuList();
@@ -25,7 +25,7 @@ public class MenuController {
 
 		model.addAttribute("menuList", menuList);
 		
-		return "menus/list";	//WEB-INF/views/menus/list.jsp
+		return "menus/menuList";	//WEB-INF/views/menus/list.jsp
 	}
 	
 	
@@ -55,7 +55,7 @@ public class MenuController {
 		
 		// 목록보기로 이동
 		//return "menus/list";	//WEB-INF/views/menus/write.jsp
-		return "redirect:/Menus/List";
+		return "redirect:/Menus/menuList";
 	}
 	
 	///Menus/Delete?menu_id=${ menu.menu_id   }
@@ -64,7 +64,7 @@ public class MenuController {
 	public String delete(MenuDTO menuDto) {
 		menuMapper.deleteMenu(menuDto);
 		System.out.println(menuDto);
-		return "redirect:/Menus/List";
+		return "redirect:/Menus/menuList";
 	}
 	
 	//http://localhost:9090/Menus/UpdateForm?menu_id=MENU12
@@ -84,6 +84,6 @@ public class MenuController {
 	@RequestMapping("/Menus/Update")
 	public String updateMenu(MenuDTO menuDto, Model model) {
 		menuMapper.updateMenu(menuDto);
-		return "redirect:/Menus/List";
+		return "redirect:/Menus/menuList";
 	}
 }
